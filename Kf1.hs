@@ -1,6 +1,8 @@
 {-# LANGUAGE TypeSynonymInstances #-}
 {-# LANGUAGE FlexibleInstances #-}
 
+module Kf1 where
+
 class ExpSYM repr where
     lit :: Int -> repr
     neg :: repr -> repr
@@ -19,8 +21,9 @@ instance ExpSYM String where
 eval :: Int -> Int
 eval = id
 
-tf1_Int :: Int
-tf1_Int = add (lit 8) (neg (add (lit 1) (lit 2)))
+view :: String -> String
+view = id
 
-tf1_String :: String
-tf1_String = add (lit 8) (neg (add (lit 1) (lit 2)))
+tf1_e = eval (add (lit 8) (neg (add (lit 1) (lit 2))))
+tf1_v = view (add (lit 8) (neg (add (lit 1) (lit 2))))
+
