@@ -1,6 +1,8 @@
 {-# LANGUAGE TypeSynonymInstances #-}
 {-# LANGUAGE FlexibleInstances #-}
 
+module Ho where
+
 class Symantics repr where
     int :: Int -> repr Int
     add :: repr Int -> repr Int -> repr Int
